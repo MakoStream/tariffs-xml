@@ -1,0 +1,25 @@
+# Build
+target/
+build/
+*.class
+*.jar
+*.war
+
+# Logs
+logs/
+*.log
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test / coverage output
+hs_err_pid*
