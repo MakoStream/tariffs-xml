@@ -30,6 +30,11 @@
             <version>5.11.3</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>4.0.2</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -53,6 +58,22 @@
                         <goals><goal>report</goal></goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.jvnet.jaxb</groupId>
+                <artifactId>jaxb-maven-plugin</artifactId>
+                <version>4.0.8</version>
+                <executions>
+                    <execution>
+                        <goals><goal>generate</goal></goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <schemaDirectory>src/main/resources</schemaDirectory>
+                    <schemaIncludes><include>tariffs.xsd</include></schemaIncludes>
+                    <bindingDirectory>src/main/xjb</bindingDirectory>
+                    <bindingIncludes><include>bindings.xjb</include></bindingIncludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>

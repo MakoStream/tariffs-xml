@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings version="3.0"
+               xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <jaxb:bindings schemaLocation="../resources/tariffs.xsd" node="/xs:schema">
+        <jaxb:schemaBindings>
+            <jaxb:package name="ua.lab2.tariffs.model"/>
+        </jaxb:schemaBindings>
+
+        <jaxb:bindings node="//xs:complexType[@name='TariffType']">
+            <jaxb:class name="Tariff"/>
+        </jaxb:bindings>
+        <jaxb:bindings node="//xs:complexType[@name='CallPricesType']">
+            <jaxb:class name="CallPrices"/>
+        </jaxb:bindings>
+        <jaxb:bindings node="//xs:complexType[@name='ParametersType']">
+            <jaxb:class name="Parameters"/>
+        </jaxb:bindings>
+        <jaxb:bindings node="//xs:simpleType[@name='TarificationType']">
+            <jaxb:typesafeEnumClass name="Tarification"/>
+        </jaxb:bindings>
+        <jaxb:bindings node="//xs:simpleType[@name='StatusType']">
+            <jaxb:typesafeEnumClass name="Status"/>
+        </jaxb:bindings>
+    </jaxb:bindings>
+</jaxb:bindings>
