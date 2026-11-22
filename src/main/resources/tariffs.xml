@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tariffs xmlns="http://lab2.ua/tariffs"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://lab2.ua/tariffs tariffs.xsd">
+    <Tariff id="tariff-1" status="ACTIVE">
+        <Name>Простий</Name>
+        <OperatorName>Kyivstar</OperatorName>
+        <Payroll>0.00</Payroll>
+        <CallPrices>
+            <Inside>1.00</Inside>
+            <Outside>1.50</Outside>
+            <Landline>2.00</Landline>
+        </CallPrices>
+        <SmsPrice>1.00</SmsPrice>
+        <Parameters>
+            <FavoriteNumbers>0</FavoriteNumbers>
+            <Tarification>PER_MINUTE</Tarification>
+            <ConnectionFee>0.00</ConnectionFee>
+        </Parameters>
+    </Tariff>
+    <Tariff id="tariff-2" status="ACTIVE">
+        <Name>Максимум</Name>
+        <OperatorName>Kyivstar</OperatorName>
+        <Payroll>350.00</Payroll>
+        <CallPrices>
+            <Inside>0.00</Inside>
+            <Outside>0.00</Outside>
+            <Landline>0.00</Landline>
+        </CallPrices>
+        <SmsPrice>0.00</SmsPrice>
+        <Parameters>
+            <FavoriteNumbers>5</FavoriteNumbers>
+            <Tarification>TWELVE_SECOND</Tarification>
+            <ConnectionFee>50.00</ConnectionFee>
+        </Parameters>
+    </Tariff>
+    <Tariff id="tariff-3" status="ACTIVE">
+        <Name>Smart</Name>
+        <OperatorName>Vodafone</OperatorName>
+        <Payroll>200.00</Payroll>
+        <CallPrices>
+            <Inside>0.00</Inside>
+            <Outside>1.20</Outside>
+            <Landline>1.00</Landline>
+        </CallPrices>
+        <SmsPrice>0.50</SmsPrice>
+        <Parameters>
+            <FavoriteNumbers>3</FavoriteNumbers>
+            <Tarification>TWELVE_SECOND</Tarification>
+            <ConnectionFee>25.00</ConnectionFee>
+        </Parameters>
+    </Tariff>
+    <Tariff id="tariff-4" status="ARCHIVED">
+        <Name>Свобода</Name>
+        <OperatorName>Vodafone</OperatorName>
+        <Payroll>120.00</Payroll>
+        <CallPrices>
+            <Inside>0.50</Inside>
+            <Outside>2.00</Outside>
+            <Landline>1.50</Landline>
+        </CallPrices>
+        <SmsPrice>0.75</SmsPrice>
+        <Parameters>
+            <FavoriteNumbers>2</FavoriteNumbers>
+            <Tarification>PER_MINUTE</Tarification>
+            <ConnectionFee>0.00</ConnectionFee>
+        </Parameters>
+    </Tariff>
+    <Tariff id="tariff-5" status="ACTIVE">
+        <Name>Інтернет Лайт</Name>
+        <OperatorName>lifecell</OperatorName>
+        <Payroll>150.00</Payroll>
+        <CallPrices>
+            <Inside>0.00</Inside>
+            <Outside>1.00</Outside>
+            <Landline>1.00</Landline>
+        </CallPrices>
+        <SmsPrice>0.60</SmsPrice>
+        <Parameters>
+            <FavoriteNumbers>1</FavoriteNumbers>
+            <Tarification>PER_MINUTE</Tarification>
+            <ConnectionFee>10.00</ConnectionFee>
+        </Parameters>
+    </Tariff>
+    <Tariff id="tariff-6" status="ACTIVE">
+        <Name>Все разом</Name>
+        <OperatorName>lifecell</OperatorName>
+        <Payroll>300.00</Payroll>
+        <CallPrices>
+            <Inside>0.00</Inside>
+            <Outside>0.00</Outside>
+            <Landline>0.50</Landline>
+        </CallPrices>
+        <SmsPrice>0.00</SmsPrice>
+        <Parameters>
+            <FavoriteNumbers>4</FavoriteNumbers>
+            <Tarification>TWELVE_SECOND</Tarification>
+            <ConnectionFee>30.00</ConnectionFee>
+        </Parameters>
+    </Tariff>
+</Tariffs>
