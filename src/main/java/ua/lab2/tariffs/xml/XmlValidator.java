@@ -14,9 +14,9 @@ import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
+import org.xml.sax.helpers.DefaultHandler;
 
 /** Validates XML documents against an XSD schema and reports every violation found. */
 public class XmlValidator {
@@ -58,25 +58,18 @@ public class XmlValidator {
         LOG.info("{} is valid", xmlFile);
     }
 
-    private record CollectingErrorHandler(List<String> errors) implements ErrorHandler {
+    /** Collects recoverable violations; fatal (not well-formed) errors stop validation. */
+    private static final class CollectingErrorHandler extends DefaultHandler {
 
-        @Override
-        public void warning(SAXParseException e) {
-            LOG.warn("Validation warning: {}", describe(e));
+        private final List<String> errors;
+
+        CollectingErrorHandler(List<String> errors) {
+            this.errors = errors;
         }
 
         @Override
         public void error(SAXParseException e) {
-            errors.add(describe(e));
-        }
-
-        @Override
-        public void fatalError(SAXParseException e) throws SAXException {
-            throw e;
-        }
-
-        private static String describe(SAXParseException e) {
-            return "line " + e.getLineNumber() + ": " + e.getMessage();
+            errors.add("line " + e.getLineNumber() + ": " + e.getMessage());
         }
     }
 }

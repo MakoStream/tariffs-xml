@@ -36,10 +36,7 @@ public class XslTransformer {
     public void transform(Path input, Path output) throws XmlProcessingException {
         LOG.info("Transforming {} -> {}", input, output);
         try {
-            Path parent = output.toAbsolutePath().getParent();
-            if (parent != null) {
-                Files.createDirectories(parent);
-            }
+            Files.createDirectories(output.toAbsolutePath().getParent());
             Transformer transformer = templates.newTransformer();
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
             try (OutputStream out = Files.newOutputStream(output)) {
